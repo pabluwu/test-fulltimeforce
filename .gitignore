@@ -1,6 +1,7 @@
 # compiled output
 /back-test/dist
 /back-test/node_modules
+/front-project/node_modules
 
 # Logs
 logs
