@@ -1,41 +1,34 @@
 import { Injectable } from '@nestjs/common';
+import variables from './configuration';
 
 @Injectable()
 export class AppService {
   async getCommits(): Promise<any> {
 
-    const baseUrl = 'https://api.github.com';
+    const { BASE_URL, USER, PROJECT } = variables;
 
-    async function getUser() {
-      try {
-        const response = await fetch(`${baseUrl}/repos/pabluwu/test-fulltimeforce/commits`, {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
     
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-    
-        const data = await response.json();
-        return data;
-      } catch (error) {
-        console.log('error');
+    try {
+      const response = await fetch(`${BASE_URL}/repos/${USER}/${PROJECT}/commits`, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
       }
+  
+      const data = await response.json();
+      return data.map(element => {
+        const { sha, commit } = element
+        const { committer, message} = commit
+        return { id : sha, committer , message };
+      });
+
+    } catch (error) {
+      return 'Error 500';
     }
-
-    const resp = await getUser();
-
-    return resp.map(element => {
-      const { sha, commit } = element
-      
-      const { committer, message} = commit
-
-      return { id : sha, committer , message };
-    });
-    
-
-    
+   
   }
 }
