@@ -3,14 +3,12 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AppService {
   async getCommits(): Promise<any> {
-    const token = 'YOUR_PERSONAL_ACCESS_TOKEN';
 
-    // pabluwu/prueba-tecnica
     const baseUrl = 'https://api.github.com';
 
     async function getUser() {
       try {
-        const response = await fetch(`${baseUrl}/repos/pabluwu/prueba-tecnica/commits`, {
+        const response = await fetch(`${baseUrl}/repos/pabluwu/test-fulltimeforce/commits`, {
           headers: {
             'Content-Type': 'application/json',
           },
@@ -27,9 +25,17 @@ export class AppService {
       }
     }
 
-    const resp = getUser();
+    const resp = await getUser();
+
+    return resp.map(element => {
+      const { sha, commit } = element
+      
+      const { committer, message} = commit
+
+      return { id : sha, committer , message };
+    });
     
-    return resp; 
+
     
   }
 }
