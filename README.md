@@ -2,14 +2,19 @@
 
 Technical test for FullTimeForce.
 
+Backend developed with NestJS.
+Frontend developed with ReactJS.
+
+Both projects are written in TypeScript.
+
 ## Requirements
 
 NodeJS 18+
 
 ## Running the backend app
 
-Enter into back-test folder.
 ```bash
+#Enter into back-test folder.
 $ cd back-test/
 
 # development
@@ -24,8 +29,8 @@ $ npm run start:prod
 
 ## Running the backend app
 
-Enter into back-test folder.
 ```bash
+#Enter into back-test folder.
 $ cd front-project/
 
 # development
