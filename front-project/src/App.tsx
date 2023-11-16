@@ -9,7 +9,7 @@ import './App.css'
 
 function App() {
   return (
-    <section className='h-screen bg-gray-950 flex justify-center justify-items-center py-12'>
+    <section className='h-full min-h-screen bg-gray-950 flex justify-center justify-items-center py-12'>
       <Console></Console>
     </section>
   )
