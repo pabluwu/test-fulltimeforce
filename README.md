@@ -12,7 +12,6 @@ Enter into back-test folder.
 ```bash
 $ cd back-test/
 
-```bash
 # development
 $ npm run start
 
@@ -23,18 +22,13 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
-
 ## Running the backend app
 
 Enter into back-test folder.
 ```bash
 $ cd front-project/
 
-```bash
 # development
 $ npm run dev
 
 ```
-
-## Test
