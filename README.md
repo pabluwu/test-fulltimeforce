@@ -27,7 +27,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Running the backend app
+## Running the frontend app
 
 ```bash
 #Enter into back-test folder.
