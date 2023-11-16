@@ -17,6 +17,9 @@ NodeJS 18+
 #Enter into back-test folder.
 $ cd back-test/
 
+#Install dependencies.
+$ npm install package.json
+
 # development
 $ npm run start
 
@@ -27,11 +30,14 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Running the backend app
+## Running the frontend app
 
 ```bash
 #Enter into back-test folder.
 $ cd front-project/
+
+#Install dependencies.
+$ npm install package.json
 
 # development
 $ npm run dev
